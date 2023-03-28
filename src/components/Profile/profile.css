@@ -1,0 +1,29 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile_icon {
+  width: 130px;
+  height: 130px;
+  background: var(--color);
+  border-radius: 8px;
+  border: 3px solid white;
+  margin-bottom: 10px;
+}
+
+.profile.isFocusedLeaf .profile_icon {
+  border-color: #F2DB59;
+}
+
+.profile_username {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.profile.isFocusedLeaf .profile_username {
+  color: #F2DB59;
+}
+
