@@ -4,6 +4,9 @@ import { FocusRoot } from '@please/lrud';
 import './index.css';
 import App from './app';
 
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
+
 ReactDOM.render(
   <FocusRoot>
     <App />
