@@ -8,8 +8,8 @@ import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 
 ReactDOM.render(
-  <FocusRoot>
-    <App />
+  <FocusRoot >
+    <App /> || <></>
   </FocusRoot>,
   document.getElementById('root')
 );

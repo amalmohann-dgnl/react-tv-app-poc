@@ -1,7 +1,7 @@
 import './profiles.css';
 import { motion } from 'framer-motion';
 import { FocusNode } from '@please/lrud';
-import Profile from '../components/Profile/profile';
+import Profile from '../../components/Profile/profile';
 
 const profiles = [
   {
@@ -21,6 +21,7 @@ const profiles = [
 export default function Profiles({ setSelectedProfile }) {
   return (
     <FocusNode
+    focusId='profiles'
       elementType={motion.div}
       orientation="horizontal"
       className="profiles page"

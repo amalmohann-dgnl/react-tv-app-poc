@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import './home.css';
-import '../components/Rail/row'
+import '../../components/Rail/row'
 import { FocusNode, useSetFocus } from '@please/lrud';
 import { motion } from 'framer-motion';
-import { endp as endpoint } from '../configs/endpoint-url';
-import Row from '../components/Rail/row';
-import AxiosRequester from '../services/AxiosRequester';
-import railName from '../configs/rail-name';
+import { endp as endpoint } from '../../configs/endpoint-url';
+import Row from '../../components/Rail/row';
+import AxiosRequester from '../../services/AxiosRequester';
+import railName from '../../configs/rail-name';
 
 // I just manually typed this in after rendering out a row...
 // In a real app you would be a bit more diligent about making sure that the height
@@ -124,7 +124,6 @@ export default function Home({ selectedProfile }) {
           );
 
           saveRailData.push(fetchedRailData);
-          console.log('saving');
         }
       });
     }

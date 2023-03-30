@@ -6,7 +6,6 @@ import { useEffect, useState } from 'react';
 import railName from '../../configs/rail-name';
 
 export default function Row(props) {
-  console.log(props);
 
   const { row, rowIndex, id } = props
 
@@ -36,7 +35,6 @@ export default function Row(props) {
 
   }, [row, columnIndex]);
 
-  console.log(translateX, rowIndex);
 
   const transitionStyle = {
     transform: `translateX(${translateX}px)`,
@@ -47,9 +45,8 @@ export default function Row(props) {
   return (
     <FocusNode 
     className={classnames('row')} 
-    focusId={id}
+    focusId={'row'+id}
     onLeft={((e)=>{
-      console.log(e);
       if(columnIndex>0){
         setColumnIndex(columnIndex - 1)
       }

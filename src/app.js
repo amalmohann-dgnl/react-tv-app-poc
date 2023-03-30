@@ -2,9 +2,9 @@ import { useState } from 'react';
 import { FocusNode } from '@please/lrud';
 import { AnimatePresence } from 'framer-motion';
 import './app.css';
-import Profiles from './profiles/profiles';
-import Home from './home/home';
-import Nav from './nav/nav';
+import Profiles from './Pages/profiles/profiles';
+import Home from './Pages/home/home';
+import Nav from './components/nav/nav';
 
 export default function App() {
 

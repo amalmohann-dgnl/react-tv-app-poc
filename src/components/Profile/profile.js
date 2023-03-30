@@ -5,6 +5,7 @@ export default function Profile({ profile, setSelectedProfile }) {
   return (
     <FocusNode
       className="profile"
+      focusId='profileItem'
       style={{
         '--color': profile.color,
       }}
