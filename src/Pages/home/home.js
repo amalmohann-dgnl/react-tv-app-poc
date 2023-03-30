@@ -22,6 +22,7 @@ export default function Home({ selectedProfile }) {
 
   useEffect(() => {
     fetchData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [gridPosition, setGridPosition] = useState({
@@ -83,8 +84,8 @@ export default function Home({ selectedProfile }) {
 
             <Row
               row={rail}
-              key={railName[railIndex].replaceAll(' ','_')+railIndex.toString()}
-              id={railName[railIndex].replaceAll(' ','_')+railIndex.toString()}
+              key={railName[railIndex]?.replaceAll(' ','_')+railIndex.toString()}
+              id={railName[railIndex]?.replaceAll(' ','_')+railIndex.toString()}
               rowIndex={railIndex}
               // gridPosition={{columnIndex:gridPosition.columnIndex, rowIndex:railIndex}}
             />
@@ -109,6 +110,7 @@ export default function Home({ selectedProfile }) {
 
   async function fetchData() {
     const saveRailData = [];
+    let longData = [];
     for (let i = 0; i < endpoint.length; i++) {
       await axiosRequester.fetch(endpoint[i]).then((response) => {
         if (response) {
@@ -122,12 +124,14 @@ export default function Home({ selectedProfile }) {
               };
             }
           );
-
+          longData = [...longData, ...fetchedRailData]
           saveRailData.push(fetchedRailData);
         }
       });
     }
+    saveRailData.unshift(longData)
     setRailData(saveRailData);
+
     setIsLoading(false);
   }
 }

@@ -33,4 +33,4 @@ const endp = [
     "/filters/gNAaDQJl13GS?page=1&language=en&size=100",
 ]
 
-export { endp };
+export { endp,urls };

@@ -1,4 +1,4 @@
-import { FocusNode, useFocusNodeById } from '@please/lrud';
+import { FocusNode } from '@please/lrud';
 import classnames from 'classnames';
 import './row.css';
 import RailItem from '../RailItem/railItem';
@@ -11,6 +11,7 @@ export default function Row(props) {
 
   const [translateX, setTranslateX] = useState(0);
   const [columnIndex, setColumnIndex] = useState(0);
+  // const [focusItem, setFocusItem] = useState([rowIndex][columnIndex]);
   // const focusedRailNode = useFocusNodeById(id);
   // console.log(focusedRailNode);
 
@@ -34,6 +35,10 @@ export default function Row(props) {
     setTranslateX(translate);
 
   }, [row, columnIndex]);
+  
+  // useEffect(()=>{
+  //   setFocusItem([rowIndex][columnIndex])
+  // },[rowIndex,columnIndex])
 
 
   const transitionStyle = {
@@ -48,13 +53,13 @@ export default function Row(props) {
     focusId={'row'+id}
     onLeft={((e)=>{
       if(columnIndex>0){
-        setColumnIndex(columnIndex - 1)
+        setColumnIndex(columnIndex-1)
       }
     })}
     onRight={((e)=>{
       console.log(e);
       if(columnIndex < row.length - 1 ){
-        setColumnIndex(columnIndex + 1)
+        setColumnIndex(columnIndex+1)
       }
     })}
     >
